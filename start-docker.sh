@@ -19,7 +19,8 @@ set -e
 
 USER_ID=$(id -u)
 
-IMAGE_NAME="mod-nightly-custom-op-ubuntu16-user-$USER_ID"
+#IMAGE_NAME="mod-nightly-custom-op-ubuntu16-user-$USER_ID"
+IMAGE_NAME="tf-soc-tommy"
 
 # create named container if arg given (--rm default)
 if [ -z $1 ]; then

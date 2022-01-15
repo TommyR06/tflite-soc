@@ -31,12 +31,27 @@ RUN apt install -y vim
 RUN apt install -y tmux
 
 # Requirements for VSCODE plugins
-WORkDIR /usr/local/bin
-wget -q https://github.com/bazelbuild/buildtools/releases/download/3.2.1/buildifier -O buildifier
+#WORkDIR /usr/local/bin
+#wget -q https://github.com/bazelbuild/buildtools/releases/download/3.2.1/buildifier -O buildifier
+# Tommy FIX
+WORKDIR /usr/local/bin
+RUN wget -q https://github.com/bazelbuild/buildtools/releases/download/3.2.1/buildifier -O buildifier
+
+# Tommy FIX Install bazel-3.0.0
+RUN apt update
+RUN apt install apt-transport-https curl gnupg
+RUN curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg
+RUN mv bazel.gpg /etc/apt/trusted.gpg.d/
+RUN echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+
+RUN apt update
+RUN apt install bazel-3.0.0
 
 # Tools to cross-compile for the Zedboard
 RUN apt install -y minicom
-RUN apt install -y crossbuild-essential-armhfA
+#RUN apt install -y crossbuild-essential-armhfA
+# Tommy FIX
+RUN apt install -y crossbuild-essential-armhf
 
 # Tools to profile x86 code 
 # RUN apt install -y perf

@@ -21,7 +21,8 @@ USER_ID=$(id -u)
 GROUP_ID=$(id -g)
 
 # get workflow+container name
-IMAGE_NAME="mod-nightly-custom-op-ubuntu16-user-$USER_ID"
+#IMAGE_NAME="mod-nightly-custom-op-ubuntu16-user-$USER_ID"
+IMAGE_NAME="tf-soc-tommy"
 
 # build container
 docker build -f ./Dockerfile . \
