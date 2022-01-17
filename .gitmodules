@@ -1,6 +1,6 @@
 [submodule "tensorflow"]
 	path = tensorflow
-	url = https://github.com/tflite-soc/tensorflow.git
+	url = https://github.com/TommyR06/tensorflow.git
 [submodule "benchmarking-models"]
 	path = benchmarking-models
 	url = https://github.com/tflite-soc/benchmarking-models.git
@@ -9,4 +9,4 @@
 	url = https://github.com/tflite-soc/zedboard-setup.git
 [submodule "tensorflow-models"]
 	path = tensorflow-models
-	url = https://github.com/tflite-soc/tensorflow-models.git
+	url = https://github.com/TommyR06/tensorflow-models.git
